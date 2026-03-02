@@ -1,29 +1,17 @@
-package com.project.library_management_system.entity;
+package com.project.library_management_system.dto;
 
-import jakarta.persistence.*;
+import com.project.library_management_system.entity.Book;
+import com.project.library_management_system.entity.User;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
 
-@Entity
-public class BorrowRecord {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class BorrowRecordResponseDto {
+
     private Long id;
-
     private LocalDate borrowDate;
     private LocalDate returnDate;
-
-    @ManyToOne
-    @JoinColumn(name="user_id",nullable = false)
     private User user;
-
-    @ManyToOne
-    @JoinColumn(name="book_id",nullable=false)
     private Book book;
-
-    BorrowRecord(){}
 
     public Long getId() {
         return id;
@@ -64,4 +52,13 @@ public class BorrowRecord {
     public void setBook(Book book) {
         this.book = book;
     }
+
+    public BorrowRecordResponseDto(Long id, LocalDate borrowDate, LocalDate returnDate, User user, Book book) {
+        this.id = id;
+        this.borrowDate = borrowDate;
+        this.returnDate = returnDate;
+        this.user = user;
+        this.book = book;
+    }
 }
+

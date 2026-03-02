@@ -56,4 +56,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public List<BorrowRecord> getBorrowRecords() {
+        return borrowRecords;
+    }
+
+    public void setBorrowRecords(List<BorrowRecord> borrowRecords) {
+        this.borrowRecords = borrowRecords;
+    }
 }
