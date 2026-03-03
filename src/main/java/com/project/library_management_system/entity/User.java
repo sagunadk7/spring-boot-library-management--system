@@ -2,6 +2,7 @@ package com.project.library_management_system.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -13,16 +14,18 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private LocalDate registeredDate;
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private List<BorrowRecord> borrowRecords;
 
-    User(){}
+    public User(){}
 
-    public User(Long id, String name,String email,String password) {
+    public User(Long id, String name,String email,String password,LocalDate registeredDate) {
         this.id = id;
         this.name=name;
         this.email=email;
         this.password=password;
+        this.registeredDate=registeredDate;
     }
 
     public Long getId() {
@@ -63,5 +66,13 @@ public class User {
 
     public void setBorrowRecords(List<BorrowRecord> borrowRecords) {
         this.borrowRecords = borrowRecords;
+    }
+
+    public LocalDate getRegisteredDate() {
+        return registeredDate;
+    }
+
+    public void setRegisteredDate(LocalDate registeredDate) {
+        this.registeredDate = registeredDate;
     }
 }

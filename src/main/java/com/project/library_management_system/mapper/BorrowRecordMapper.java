@@ -1,6 +1,8 @@
 package com.project.library_management_system.mapper;
 
+import com.project.library_management_system.dto.BorrowRecordRequestDto;
 import com.project.library_management_system.dto.BorrowRecordResponseDto;
+import com.project.library_management_system.entity.Book;
 import com.project.library_management_system.entity.BorrowRecord;
 
 public class BorrowRecordMapper {
@@ -14,4 +16,12 @@ public class BorrowRecordMapper {
                 borrowRecord.getBook()
         );
     }
+
+//    public static BorrowRecord toEntity(BorrowRecordRequestDto request) {
+//        return new BorrowRecord(
+//                request.getUserId(),
+//                request.getBookId(),
+//                request.getReturnDate()
+//        );
+//    }
 }

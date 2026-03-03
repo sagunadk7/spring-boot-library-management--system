@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface BookService {
+
     Page<BookResponseDto> getBooksByPagination(Pageable page);
+
     Book addBook(BookRequestDto book);
 }
